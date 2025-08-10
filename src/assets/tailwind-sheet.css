@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  /* 🚨COLORS  */
+  --color-primary: #002020;
+  --color-sec: #b4dcdd;
+
+  /* 🚨 remis  */
+  --color-remis-50: #e6eded;
+  --color-remis-100: #cbf5e5;
+  --color-remis-500: #004b4d;
+  --color-remis-600: #004446;
+  --color-remis-700: #003537;
+  --color-remis-800: #00292a;
+  --color-remis-900: #002020;
+
+  --color-remis-1000: #f5f5f5;
+
+  /* 🚨 remis-lite  */
+
+  --color-remisLite-50: #f8fcfc;
+  --color-remisLite-300: #cde8e8;
+  --color-remisLite-500: #B4DCDD;
+
+  
+
+  /* 🚨 text-color  */
+  --color-textColor-50: #ececed;
+  --color-textColor-300: #7c8289;
+  --color-textColor-400: #636972;
+  --color-textColor-500: #3c444f;
+  --color-textColor-900: #191d21;
+
+  /* 🚨 neutrals  */
+  --color-neutral-100: #fcfcfd;
+  --color-neutral-300: #353945;
+  --color-neutral-400: #777e90;
+
+  /* 🚨 FONT SIZE  */
+  --text-heading-xxl: 3rem;
+  --text-heading-xl: 2.25rem;
+  --text-heading-lg: 1.75rem;
+  --text-heading-md: 1.25rem;
+  --text-heading-sm: 1rem;
+  --text-heading-xs: 0.875rem;
+
+  --text-display-lg: 5rem;
+  --text-display-md: 3.5rem;
+  --text-display-sm: 2.375rem;
+  --text-display-xs: 2rem;
+}
+
+.wrapper {
+  @apply w-[90%] mx-auto max-w-[1500px];
+}
+
+.global-gap {
+  @apply my-20;
+}
+
+.relative-center {
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
