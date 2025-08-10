@@ -4,7 +4,7 @@ import phone from "@/assets/svg/phone.svg";
 import sc from "@/assets/svg/small-circle.png";
 import bc from "@/assets/svg/big-circle.svg";
 import qrCode from "@/assets/svg/qr-code.svg";
-import smart from "@/assets/svg/smart.svg";
+import smart from "@/assets/svg/smart.svg"; 
 
 export default function Hero() {
   return (
