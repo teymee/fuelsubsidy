@@ -1,22 +1,66 @@
-import React from "react";
+import React, { useRef } from "react";
 
 // 🚨 assets
 import logo from "@/assets/svg/logo.svg";
 import location from "@/assets/svg/location.svg";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 export default function Navbar() {
-  return (
-    <nav className="fixed z-50 top-4 w-full">
-      <section className=" wrapper  flex justify-between items-center">
-        <div className="flex gap-x-1 items-center">
-          <img src={logo} alt="fuelsubsidy logo" />
-          <h1 className="text-remis-50 text-[22.04px]">FuelSubsidy</h1>
-        </div>
+  const navRef = useRef();
+  useGSAP(() => {
+    ScrollTrigger.killAll();
+    gsap.from(".navbar", {
+      backgroundColor: "transparent",
+    });
+    const tl = gsap.timeline();
+    tl.to(".navbar", {
+      backgroundColor: "#002020",
+      top: 0,
+      scrollTrigger: {
+        trigger: ".hero",
+        duration: 0.5,
+        start: "bottom 90%",
+        end: "bottom 90%",
+        scrub: true,
+        toggleActions: "play none none reverse",
+        markers: true,
+      },
+    });
 
-        <button className="flex gap-x-2 w-fit px-5 py-3 items-center rounded-full bg-sec">
-          <img src={location} alt="find station" />
-          <h1 className="text-remis-500 font-bold text-base">Find a station</h1>
-        </button>
+    tl.to(".navbar", {
+      y: -100,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".hero",
+        duration: 0.5,
+        start: "bottom 10%",
+        end: "bottom 10%",
+        scrub: true,
+        toggleActions: "play none none reverse",
+        markers: true,
+      },
+    });
+
+    ScrollTrigger.refresh();
+  }, []);
+  return (
+    <nav ref={navRef}>
+      <section className="fixed z-50 top-4 w-full navbar ">
+        <section className=" wrapper py-4 flex justify-between items-center">
+          <div className="flex gap-x-1 items-center">
+            <img src={logo} alt="fuelsubsidy logo" />
+            <h1 className="text-remis-50 text-[22.04px]">FuelSubsidy</h1>
+          </div>
+
+          <button className="flex gap-x-2 w-fit px-5 py-3 items-center rounded-full bg-sec">
+            <img src={location} alt="find station" />
+            <h1 className="text-remis-500 font-bold text-base">
+              Find a station
+            </h1>
+          </button>
+        </section>
       </section>
     </nav>
   );

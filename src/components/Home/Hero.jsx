@@ -6,9 +6,18 @@ import bc from "@/assets/svg/big-circle.svg";
 import qrCode from "@/assets/svg/qr-code.svg";
 import smart from "@/assets/svg/smart.svg"; 
 
+
+import { useGSAP } from "@gsap/react";
+
 export default function Hero() {
+
+    useGSAP(()=>{
+
+      
+    
+  })
   return (
-    <section className="bg-primary h-screen">
+    <section className="bg-primary h-screen hero">
       <section className="relative w-full h-full wrapper">
         {/* 🚨 left-text */}
         <section className=" h-full ">
@@ -19,13 +28,15 @@ export default function Hero() {
                 alt=""
                 className="absolute right-[-20%] top-[-20%]"
               />
-              <h1 className="text-[5rem] leading-24 font-semibold">
+              {/* <h1 className="text-[5rem] leading-24 font-semibold">
                 Fuel up. <br /> Pay less.
-              </h1>
-            </div>
-            {/* <h1 className="text-[3.5rem] leading-18 font-semibold">
+              </h1> */}
+
+                    <h1 className="text-[3.5rem] leading-18 font-semibold">
               Smart Fueling. <br /> Real Savings.
-            </h1> */}
+            </h1>
+            </div>
+      
 
             <div className="bg-[#54868866] w-fit flex gap-x-4 item-center pr-4 rounded-2xl">
               <img src={qrCode} alt="" />
@@ -53,10 +64,12 @@ export default function Hero() {
         </section>
 
         {/* 🚨 right-text */}
-        <section className="absolute bottom-[30%] right-[5%] w-[25%]">
+        <section className="absolute bottom-[30%] right-[5%] w-[30%]">
           <p className="text-textColor-50 text-lg">
-            With all the essentials you need out in the world, and nothing to
-            limit your possibilities, here is everything Remis has to offer.
+            Buy fuel at discounted rates, earn rewards, and track your vehicle movement, all in one easy app. 
+            Built for everyday drivers who want more value for their money at the pump. 
+            {/* With all the essentials you need out in the world, and nothing to
+            limit your possibilities, here is everything Remis has to offer. */}
           </p>
         </section>
         {/*  */}

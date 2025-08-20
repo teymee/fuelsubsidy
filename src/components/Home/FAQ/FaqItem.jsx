@@ -28,9 +28,9 @@ export default function FaqItem({ title, body: { desc, media, header } }) {
           <h4 className="text-neutral-100 font-medium text-heading-md">{header}</h4>
           <p className="text-base text-neutral-400 text-heading-xs">{desc}</p>
 
-          <button className="border-2 border-neutral-400 rounded-full font-medium px-4 py-2 text-heading-xs text-white ">
+          {/* <button className="border-2 border-neutral-400 rounded-full font-medium px-4 py-2 text-heading-xs text-white ">
             Learn more
-          </button>
+          </button> */}
         </div>
       </section>
     </section>
