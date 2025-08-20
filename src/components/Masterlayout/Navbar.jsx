@@ -18,6 +18,7 @@ export default function Navbar() {
     tl.to(".navbar", {
       backgroundColor: "#002020",
       top: 0,
+      zIndex: 1,
       scrollTrigger: {
         trigger: ".hero",
         duration: 0.5,
@@ -25,21 +26,19 @@ export default function Navbar() {
         end: "bottom 90%",
         scrub: true,
         toggleActions: "play none none reverse",
-        markers: true,
       },
     });
 
     tl.to(".navbar", {
       y: -100,
       opacity: 0,
+      ease: "bounce.inOut",
       scrollTrigger: {
         trigger: ".hero",
         duration: 0.5,
         start: "bottom 10%",
         end: "bottom 10%",
         scrub: true,
-        toggleActions: "play none none reverse",
-        markers: true,
       },
     });
 
