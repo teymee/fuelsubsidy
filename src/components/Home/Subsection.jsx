@@ -8,6 +8,9 @@ import drive from "@/assets/svg/drive-earn.svg";
 import smartDrive from "@/assets/svg/smart-drive.svg";
 import payless from "@/assets/svg/pay-less.svg";
 import Card from "../UI/Card";
+import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/all";
+import gsap from "gsap";
 
 export default function Subsection() {
   const cards = [
@@ -40,9 +43,26 @@ export default function Subsection() {
     },
   ];
 
+  useGSAP(() => {
+    const text = SplitText.create(".about-app", { type: "words" });
+
+    gsap.to(text.words, {
+      color: "black",
+      fontWeight: 500,
+      stagger: 0.2,
+      ease:'power1.inOut',
+      scrollTrigger: {
+        trigger: ".subsection",
+        start: "top 80%",
+        end: "bottom 85%",
+        toggleActions: "play none none reverse",
+        scrub: true,
+      },
+    });
+  }, []);
 
   return (
-    <section className="wrapper py-8 ">
+    <section className="wrapper py-8 subsection ">
       {/* 🚨 nav  */}
       <section className="w-1/2 second-nav mx-auto rounded-full flex justify-between sticky top-4 z-50 items-center bg-textColor-900 px-4 py-3">
         <div className="flex gap-x-1 items-center">
@@ -70,7 +90,7 @@ export default function Subsection() {
       </section>
 
       {/* 🚨excerpt  */}
-      <h1 className="text-heading-xxl text-textColor-400 my-20">
+      <h1 className="text-heading-xxl text-textColor-400  my-20 about-app ">
         Fuel Subsidy is a mobile app that helps everyday vehicle owners save on
         fuel. Get discounts with digital vouchers, earn rewards for buying and
         referring, and monitor your fuel expenses, trips, and driving habits,
@@ -79,7 +99,7 @@ export default function Subsection() {
       {/*  */}
 
       {/* 🚨 cards  */}
-      <section className="relative mt-40 h-[43.75rem]">
+      <section className="relative mt-60 h-[43.75rem]">
         <div className="w-full">
           {cards.map((details, index) => {
             return (

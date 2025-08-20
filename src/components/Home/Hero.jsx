@@ -7,15 +7,10 @@ import qrCode from "@/assets/svg/qr-code.svg";
 import smart from "@/assets/svg/smart.svg"; 
 
 
-import { useGSAP } from "@gsap/react";
 
 export default function Hero() {
 
-    useGSAP(()=>{
 
-      
-    
-  })
   return (
     <section className="bg-primary h-screen hero">
       <section className="relative w-full h-full wrapper">

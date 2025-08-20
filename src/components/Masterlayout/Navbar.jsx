@@ -46,7 +46,6 @@ export default function Navbar() {
       trigger: "body",
       start: "top -100",
       end: "bottom bottom",
-      markers: true,
       onUpdate: (self) => {
         const { direction, scroll } = self;
 
