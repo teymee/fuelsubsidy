@@ -44,7 +44,7 @@ export default function Subsection() {
   return (
     <section className="wrapper py-8 ">
       {/* 🚨 nav  */}
-      <section className="w-1/2 mx-auto rounded-full flex justify-between sticky top-4 z-50 items-center bg-textColor-900 px-4 py-3">
+      <section className="w-1/2 second-nav mx-auto rounded-full flex justify-between sticky top-4 z-50 items-center bg-textColor-900 px-4 py-3">
         <div className="flex gap-x-1 items-center">
           <img
             src={logo}

@@ -42,6 +42,41 @@ export default function Navbar() {
       },
     });
 
+    ScrollTrigger.create({
+      trigger: "body",
+      start: "top -100",
+      end: "bottom bottom",
+      markers: true,
+      onUpdate: (self) => {
+        const { direction, scroll } = self;
+
+        if (scroll() > window.innerHeight) {
+          if (direction === -1) {
+            gsap.to(".navbar", {
+              y: 0,
+              opacity: 1,
+              duration: 0.3,
+              ease: "power2.out",
+            });
+
+            gsap.to(".second-nav", {
+              top: 100,
+            });
+          } else if (direction === 1) {
+            gsap.to(".navbar", {
+              y: -100,
+              opacity: 0,
+              duration: 0.3,
+              ease: "power2.out",
+            });
+
+            gsap.to(".second-nav", {
+              top: 10,
+            });
+          }
+        }
+      },
+    });
     ScrollTrigger.refresh();
   }, []);
   return (
