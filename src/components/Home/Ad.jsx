@@ -1,7 +1,7 @@
 
 export default function Ad() {
   return (
-    <section className=" relative  h-screen bg-[url(@/assets/png/phone-banner.png)] bg-cover [ lg:py-0 py-10">
+    <section className=" relative  h-screen [ lg:bg-center bg-[70%] ] bg-[url(@/assets/png/phone-banner.png)] bg-cover [ lg:py-0 py-10">
       <div className="absolute w-full h-full inset-0 gradient"></div>
       <section className="wrapper h-full ">
         <div className=" space-y-10 text-white/100 h-full  [ lg:w-[40%]  ] my-auto flex flex-col [ lg:justify-center justify-between ]  ">
