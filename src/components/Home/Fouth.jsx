@@ -101,10 +101,8 @@ export default function Fouth() {
             </div>
 
             {/* 🚨image  */}
-            <section className="absolute  [ lg:w-full lg:h-full w-[247px]  ] [ lg:left-45 right-0 ] top-[30%]">
-              <div>
-                <img src={referFriend} alt="" className="h-full " />
-              </div>
+            <section className="absolute  [ lg:w-full lg:h-full w-[260px] h-[240px] ] [ lg:left-45 right-0 ] [ lg:top-[30%] top-[32%] ] ">
+              <img src={referFriend} alt="" className="h-full w-full object-cover " />
             </section>
           </section>
         </section>
