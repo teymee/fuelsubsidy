@@ -27,8 +27,7 @@ export default function Fouth() {
 
         <section className=" overflow-hidden lg:w-1/2 relative bg-remis-1000 rounded-2xl p-8 h-full space-y-4">
           <h1 className="text-remis-500 font-semibold [ lg:text-display-xs text-heading-md ]">
-            Refer & Earn Up to ₦100,000 Weekly in{" "}
-            <br className="[ lg:block hidden ] " /> Fuel Subsidy
+            Refer & Earn Up to ₦100,000 Weekly in  Fuel Subsidy
           </h1>
 
           <section className=" [ lg:h-[430px] h-[250px] ] lg:mt-10 mt-20">
@@ -101,8 +100,8 @@ export default function Fouth() {
             </div>
 
             {/* 🚨image  */}
-            <section className="absolute  [ lg:w-full lg:h-full w-[260px] h-[240px] ] [ lg:left-45 right-0 ] [ lg:top-[30%] top-[32%] ] ">
-              <img src={referFriend} alt="" className="h-full w-full object-cover " />
+            <section className="absolute  [ lg:w-[320px] lg:h-[320px] w-[260px] h-[240px] ] [ lg:left-45 right-0 ] [ lg:top-[30%] top-[32%] ] ">
+              <img src={referFriend} alt="" className="h-full w-full [ lg:object-contain object-cover ] " />
             </section>
           </section>
         </section>

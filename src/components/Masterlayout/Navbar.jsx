@@ -1,14 +1,20 @@
-import React, { useRef } from "react";
+import React, { useRef} from "react";
 
 // 🚨 assets
 import logo from "@/assets/svg/logo.svg";
-import location from "@/assets/svg/location.svg";
+// import location from "@/assets/svg/location.svg";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import appStore from "@/assets/svg/appStore.svg";
+import googlePlay from "@/assets/svg/googlePlay.svg";
+import apple from "@/assets/svg/apple.svg";
+import playstore from "@/assets/svg/playstore.svg"; 
 
 export default function Navbar() {
   const navRef = useRef();
+
+  // const [toggleNav, setToggleNav] = useState(false);
   useGSAP(() => {
     ScrollTrigger.killAll();
     gsap.from(".navbar", {
@@ -85,17 +91,49 @@ export default function Navbar() {
       <section className="fixed z-50 top-4 w-full navbar ">
         <section className=" wrapper py-4 flex justify-between items-center">
           <div className="flex gap-x-1 items-center">
-            <img src={logo} alt="fuelsubsidy logo" className=" [ lg:w-full w-[28px] ]"  />
-            <h1 className="text-remis-50 [ lg:text-[22.04px] text-base ]">FuelSubsidy</h1>
+            <img
+              src={logo}
+              alt="fuelsubsidy logo"
+              className=" [ lg:w-full w-[28px] ]"
+            />
+            <h1 className="text-remis-50 [ lg:text-[22.04px] text-base ]">
+              FuelSubsidy
+            </h1>
           </div>
 
-          <button className="flex gap-x-2 w-fit px-5 py-3 items-center rounded-full bg-sec">
+
+           <section className="bg-primary rounded-md  gap-x-4 flex">
+            <a
+              href="https://apps.apple.com/ng/app/fuelsubsidy/id6745834042"
+              target="_blank"
+            >
+              <img src={appStore} alt="" className="w-full h-[40px] hidden lg:block" />
+              <img src={apple} alt="" className="block lg:hidden" />
+            </a>
+
+            <div className="">
+              <a
+                href="https://play.google.com/store/apps/details?id=africa.remis.b2c"
+                target="_blank"
+              >
+                <img src={googlePlay} alt="" className="w-full h-[40px]  hidden lg:block" />
+                 <img src={playstore} alt="" className="block lg:hidden" />
+              </a>
+            </div>
+          </section>
+
+          {/* <button
+            onClick={() => setToggleNav(!toggleNav)}
+            className="flex gap-x-2 w-fit px-5 py-3 items-center rounded-full bg-sec"
+          >
             <img src={location} alt="find station" />
             <h1 className="text-remis-500 font-bold [ lg:text-base text-sm ]">
               Find a station
             </h1>
-          </button>
+          </button> */}
         </section>
+
+     
       </section>
     </nav>
   );

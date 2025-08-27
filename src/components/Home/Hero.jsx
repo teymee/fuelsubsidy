@@ -3,7 +3,7 @@ import React from "react";
 import phone from "@/assets/svg/Phone.svg";
 import sc from "@/assets/svg/small-circle.png";
 import bc from "@/assets/svg/big-circle.svg";
-import qrCode from "@/assets/svg/qr-code.svg";
+// import qrCode from "@/assets/svg/qr-code.svg";
 import smart from "@/assets/svg/smart.svg";
 import appStore from "@/assets/svg/appStore.svg";
 import googlePlay from "@/assets/svg/googlePlay.svg";
@@ -14,7 +14,7 @@ export default function Hero() {
       <section className="relative w-full h-full wrapper">
         {/* 🚨 left-text */}
         <section className=" h-full ">
-          <div className="absolute text-remis-50  left-0 [ lg:top-[45%] top-[20%] ] -translate-y-1/2 space-y-10">
+          <div className="absolute text-remis-50  left-0 [ lg:top-[45%] top-[20%] ] -translate-y-1/2 space-y-6">
             <div className="w-fit relative">
               <img
                 src={smart}
@@ -27,17 +27,35 @@ export default function Hero() {
               </h1>
             </div>
 
-            <div className="bg-[#54868866] w-fit  gap-x-4 item-center pr-4 rounded-2xl [ lg:flex hidden ]">
+            <section className="gap-x-4 pointer-events-auto  relative [ lg:flex hidden ]">
+              <a
+                href="https://play.google.com/store/apps/details?id=africa.remis.b2c"
+                target="_blank"
+              >
+                
+                <img src={appStore} alt="" className="w-full h-[40px]" />
+              </a>
+              <a
+              className=""
+                href="https://apps.apple.com/ng/app/fuelsubsidy/id6745834042"
+                target="_blank"
+              >
+                
+                <img src={googlePlay} alt="" className="w-full h-[40px]" />
+              </a>
+            </section>
+            {/* 🚨prev design  */}
+            {/* <div className="bg-[#54868866] w-fit  gap-x-4 item-center pr-4 rounded-2xl [ lg:flex hidden ]">
               <img src={qrCode} alt="" />
               <p className="my-auto text-base">
                 Scan to download our App on the <br /> Play store and App store.
               </p>
-            </div>
+            </div> */}
           </div>
         </section>
 
         {/* {🚨app image } */}
-        <div className="relative-center [ lg:w-[25%] w-[65%] lg:mt-0 mt-[-20px] ]">
+        <div className="relative-center pointer-events-none [ lg:w-[25%] w-[65%] lg:mt-0 mt-[-20px] ]">
           <img
             src={phone}
             alt="fuelsubsidy app"
@@ -46,7 +64,7 @@ export default function Hero() {
         </div>
 
         {/* 🚨 circles  */}
-        <section className="">
+        <section className="relative z-0  pointer-events-none ">
           <div className=" absolute bottom-0 left-1/2 -translate-x-1/2 [ lg:w-[80%] w-[300%] ] ">
             <img src={bc} alt="semi-circle" />
           </div>

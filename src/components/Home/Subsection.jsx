@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 // 🚨 assets
 import logo from "@/assets/svg/logo.svg";
 import scan from "@/assets/svg/scan.svg";
@@ -12,7 +12,11 @@ import { useGSAP } from "@gsap/react";
 import { ScrollToPlugin, ScrollTrigger, SplitText } from "gsap/all";
 import gsap from "gsap";
 
+import appStore from "@/assets/svg/appStore.svg";
+import googlePlay from "@/assets/svg/googlePlay.svg";
+
 export default function Subsection() {
+  const [toggleNav, setToggleNav] = useState(false);
   const cards = [
     {
       header: "Drive, Earn, Save",
@@ -213,39 +217,61 @@ export default function Subsection() {
   return (
     <section className="wrapper py-8 subsection ">
       {/* 🚨 nav  */}
-      <section className=" [ lg:w-1/2 w-[95%] ] second-nav mx-auto rounded-full flex justify-between sticky top-4 z-50 items-center bg-textColor-900 px-4 py-3">
-        <div className="flex gap-x-1 items-center">
-          <img
-            src={logo}
-            alt="fuelsubsidy logo"
-            className="[ lg:w-[2rem] lg:h-[2rem] w-[28px] ]"
-          />
-          <h1 className="text-remis-50 [ lg:text-[1.25rem] text-base ] font-medium">
-            FuelSubsidy
-          </h1>
-        </div>
-
-        <section>
-          <div className=" gap-x-2 items-center [ lg:flex hidden ] ">
-            <button className="flex gap-x-1 w-fit px-3 py-2 items-center rounded-full bg-remis-50">
-              <img src={location} alt="find station" />
-              <h1 className="text-remis-500 font-bold text-base">
-                Find a station
-              </h1>
-            </button>
-
-            <button className="flex gap-x-2 w-fit px-3 py-2 items-center rounded-full bg-sec">
-              <img src={scan} alt="download app" />
-              <h1 className="text-remis-500 font-bold text-base">
-                Download app
-              </h1>
-            </button>
+      <nav className="sticky top-20 z-50">
+        <section className=" [ lg:w-1/2 w-[95%] ] second-nav mx-auto rounded-full flex justify-between  items-center bg-textColor-900 px-4 py-3">
+          <div className="flex gap-x-1 items-center">
+            <img
+              src={logo}
+              alt="fuelsubsidy logo"
+              className="[ lg:w-[2rem] lg:h-[2rem] w-[28px] ]"
+            />
+            <h1 className="text-remis-50 [ lg:text-[1.25rem] text-base ] font-medium">
+              FuelSubsidy
+            </h1>
           </div>
-          <div className="[ flex lg:hidden ] ">
-            <img src={hamburger} alt="" />
-          </div>
+
+          <section>
+            <div className=" gap-x-2 items-center [ lg:flex hidden ] ">
+              <button className="flex gap-x-1 w-fit px-3 py-2 items-center rounded-full bg-remis-50">
+                <img src={location} alt="find station" />
+                <h1 className="text-remis-500 font-bold text-base">
+                  Find a station
+                </h1>
+              </button>
+
+              <button className="flex gap-x-2 w-fit px-3 py-2 items-center rounded-full bg-sec">
+                <img src={scan} alt="download app" />
+                <h1 className="text-remis-500 font-bold text-base">
+                  Download app
+                </h1>
+              </button>
+            </div>
+            <div className="[ flex lg:hidden ] " onClick={() => setToggleNav(!toggleNav)}>
+              <img src={hamburger} alt="" />
+            </div>
+          </section>
         </section>
-      </section>
+
+        {toggleNav && (
+          <section className="bg-primary rounded-md mt-4 py-4 w-full [ block lg:hidden ]">
+            <a
+              href="https://apps.apple.com/ng/app/fuelsubsidy/id6745834042"
+              target="_blank"
+            >
+              <img src={appStore} alt="" className="w-full h-[40px]" />
+            </a>
+
+            <div className="mt-4">
+              <a
+                href="https://play.google.com/store/apps/details?id=africa.remis.b2c"
+                target="_blank"
+              >
+                <img src={googlePlay} alt="" className="w-full h-[40px]" />
+              </a>
+            </div>
+          </section>
+        )}
+      </nav>
 
       {/* 🚨excerpt  */}
       <h1 className="[ lg:text-heading-xxl text-base ] [ lg:my-20 my-10 ] text-textColor-400  about-app ">
@@ -257,7 +283,10 @@ export default function Subsection() {
       {/*  */}
 
       {/* 🚨 cards  */}
-      <section ref={cardContainer} className="relative [ lg:mt-60 mt-80 ] h-[43.75rem]">
+      <section
+        ref={cardContainer}
+        className="relative [ lg:mt-60 mt-80 ] h-[43.75rem]"
+      >
         <div className="w-full">
           {cards.map((details, index) => {
             return (
