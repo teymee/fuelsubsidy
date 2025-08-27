@@ -2,7 +2,8 @@ import React, { useState } from "react";
 // 🚨 asset
 import arrow from "@/assets/svg/arrow.svg";
 
-export default function FaqItem({ title, body: { desc, media, header } }) {
+// { desc, media, header }
+export default function FaqItem({ title, body: { desc} }) {
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -11,7 +12,9 @@ export default function FaqItem({ title, body: { desc, media, header } }) {
         className="flex justify-between items-center py-3 cursor-pointer"
         onClick={() => setToggle(!toggle)}
       >
-        <h2 className="text-neutral-100 font-medium text-[18px]">{title}</h2>
+        <h2 className="text-neutral-100 font-medium [ lg:text-[18px] text-sm ]">
+          {title}
+        </h2>
         <img src={arrow} alt="toggle dropdown" />
       </section>
 
@@ -20,7 +23,17 @@ export default function FaqItem({ title, body: { desc, media, header } }) {
           toggle ? "block" : "hidden"
         }`}
       >
-        <div>
+      
+
+        <div className="lg:w-[90%] space-y-4 ">
+        
+          <p className="[ lg:text-xl text-base ] text-neutral-400 text-heading-xs">{desc}</p>
+
+       
+
+          {/* 🚨 Old design  */} 
+
+          {/* <div>
           <img src={media} alt="" />
         </div>
 
@@ -28,7 +41,7 @@ export default function FaqItem({ title, body: { desc, media, header } }) {
           <h4 className="text-neutral-100 font-medium text-heading-md">{header}</h4>
           <p className="text-base text-neutral-400 text-heading-xs">{desc}</p>
 
-          {/* <button className="border-2 border-neutral-400 rounded-full font-medium px-4 py-2 text-heading-xs text-white ">
+          <button className="border-2 border-neutral-400 rounded-full font-medium px-4 py-2 text-heading-xs text-white ">
             Learn more
           </button> */}
         </div>

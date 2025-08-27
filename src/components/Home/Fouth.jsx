@@ -20,27 +20,30 @@ export default function Fouth() {
   const [active, setActive] = useState(0);
   return (
     <section className="wrapper global-gap">
-      <section className="flex gap-x-4 items-center">
-        <div className="w-1/2">
+      <section className="flex gap-x-4 items-center [ lg:gap-y-0 gap-y-4 ] [ lg:flex-row flex-col-reverse ]">
+        <div className="lg:w-1/2">
           <img src={ad} alt="" className="w-full" />
         </div>
 
-        <section className=" w-1/2 relative bg-remis-1000 rounded-2xl p-8 h-full space-y-4">
-          <h1 className="text-remis-500 font-semibold text-display-xs">
-            Refer & Earn Up to ₦100,000 Weekly in <br /> Fuel Subsidy
+        <section className=" overflow-hidden lg:w-1/2 relative bg-remis-1000 rounded-2xl p-8 h-full space-y-4">
+          <h1 className="text-remis-500 font-semibold [ lg:text-display-xs text-heading-md ]">
+            Refer & Earn Up to ₦100,000 Weekly in{" "}
+            <br className="[ lg:block hidden ] " /> Fuel Subsidy
           </h1>
 
-          <section className=" h-[430px] mt-10">
-            <div className="absolute left-0">
+          <section className=" [ lg:h-[430px] h-[250px] ] lg:mt-10 mt-20">
+            {/* 🚨 Line  */}
+            <div className="absolute [ lg:left-0 left-[-20px] ] [ top-[25%] ]">
               <img src={line} alt="" className="" />
             </div>
 
-            <div className="absolute w-auto space-y-6 left-8 top-[30%]">
+            {/* 🚨 icons  */}
+            <div className="absolute w-auto space-y-6 [ lg:left-8 left-4 ] [ lg:top-[30%] top-[30%] ]">
               <section
                 onClick={() => setActive(0)}
                 className="flex items-center gap-x-4  "
               >
-                <div>
+                <div className="[ lg:w-auto w-[45px] ]">
                   <img
                     src={active === 0 ? activePeople : people}
                     alt=""
@@ -55,7 +58,7 @@ export default function Fouth() {
                 onClick={() => setActive(1)}
                 className="flex items-center gap-x-4  "
               >
-                <div>
+                <div className="[ lg:w-auto w-[45px] ]">
                   <img
                     src={active === 1 ? activeWallet : wallet}
                     alt=""
@@ -70,7 +73,7 @@ export default function Fouth() {
                 onClick={() => setActive(2)}
                 className="flex items-center gap-x-4  "
               >
-                <div>
+                <div className="[ lg:w-auto w-[45px] ]">
                   <img
                     src={active === 2 ? activePump : pump}
                     alt=""
@@ -85,7 +88,7 @@ export default function Fouth() {
                 onClick={() => setActive(3)}
                 className="flex items-center gap-x-4  "
               >
-                <div>
+                <div className="[ lg:w-auto w-[45px] ]">
                   <img
                     src={active === 3 ? activeGift : gift}
                     alt=""
@@ -98,9 +101,9 @@ export default function Fouth() {
             </div>
 
             {/* 🚨image  */}
-            <section className="absolute left-45 top-[30%]">
+            <section className="absolute  [ lg:w-full lg:h-full w-[247px]  ] [ lg:left-45 right-0 ] top-[30%]">
               <div>
-                <img src={referFriend} alt="" />
+                <img src={referFriend} alt="" className="h-full " />
               </div>
             </section>
           </section>

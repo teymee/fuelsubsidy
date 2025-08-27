@@ -2,16 +2,32 @@ import React from "react";
 
 // 🚨 assets
 import contact from "@/assets/svg/contact-us.svg";
-import qrCode from "@/assets/svg/qr-code.svg";
+// import qrCode from "@/assets/svg/qr-code.svg";
 export default function Footer() {
   return (
-    <section className="bg-remis-800">
-      <section className="flex gap-x-4 items-center justify-center">
-        <h1 className="text-remisLite-300 text-[160px]">FuelSubsidy</h1>
-        <img src={contact} alt="" className="h-[120px] w-[7.5rem]" />
+    <section className="bg-remis-800 py-20">
+      <section className="flex flex-col items-center gap-y-10">
+
+         <section className="space-y-4">
+          <h1 className="text-remisLite-500 text-heading-lg font-semibold">
+            Get in touch
+          </h1>
+
+          <p className="underline font-semibold text-white">
+            hello@fuelsubsidy.com
+          </p>
+        </section>
+
+        <section className="flex gap-x-4 items-center justify-center flex-responsiveness">
+          <h1 className="text-remisLite-300 [ lg:text-[160px] text-[52px] ]">
+            FuelSubsidy
+          </h1>
+          <img src={contact} alt="" className="h-[120px] w-[7.5rem]" />
+        </section>
+       
       </section>
 
-      <section className="flex justify-between wrapper py-20 text-remis-50">
+      {/* <section className="flex  justify-between wrapper py-20 text-remis-50">
         <section>
           <div className="bg-[#54868866] w-fit flex gap-x-2 item-center pr-4 rounded-2xl">
             <img src={qrCode} alt="" className="w-[95px]" />
@@ -45,7 +61,7 @@ export default function Footer() {
             hello@fuelsubsidy.com
           </p>
         </section>
-      </section>
+      </section> */}
     </section>
   );
 }

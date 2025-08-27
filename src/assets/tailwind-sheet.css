@@ -20,9 +20,7 @@
 
   --color-remisLite-50: #f8fcfc;
   --color-remisLite-300: #cde8e8;
-  --color-remisLite-500: #B4DCDD;
-
-  
+  --color-remisLite-500: #b4dcdd;
 
   /* 🚨 text-color  */
   --color-textColor-50: #ececed;
@@ -56,6 +54,10 @@
 
 .global-gap {
   @apply my-20;
+}
+
+.flex-responsiveness {
+  @apply lg:flex-row flex-col;
 }
 
 .relative-center {

@@ -55,6 +55,8 @@ export default function Navbar() {
               y: 0,
               opacity: 1,
               duration: 0.3,
+
+              backgroundColor: "#002020",
               ease: "power2.out",
             });
 
@@ -83,13 +85,13 @@ export default function Navbar() {
       <section className="fixed z-50 top-4 w-full navbar ">
         <section className=" wrapper py-4 flex justify-between items-center">
           <div className="flex gap-x-1 items-center">
-            <img src={logo} alt="fuelsubsidy logo" />
-            <h1 className="text-remis-50 text-[22.04px]">FuelSubsidy</h1>
+            <img src={logo} alt="fuelsubsidy logo" className=" [ lg:w-full w-[28px] ]"  />
+            <h1 className="text-remis-50 [ lg:text-[22.04px] text-base ]">FuelSubsidy</h1>
           </div>
 
           <button className="flex gap-x-2 w-fit px-5 py-3 items-center rounded-full bg-sec">
             <img src={location} alt="find station" />
-            <h1 className="text-remis-500 font-bold text-base">
+            <h1 className="text-remis-500 font-bold [ lg:text-base text-sm ]">
               Find a station
             </h1>
           </button>
