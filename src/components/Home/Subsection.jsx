@@ -37,9 +37,9 @@ export default function Subsection() {
       color: "#F8FFF1",
     },
     {
-      header: "Pay less at the pump  up to ₦300 off ",
+      header: "Pay less at the pump  up to ₦300 off",
       desc1:
-        "Enjoy discounts at partner stations Top up your wallet and generate fuel vouchers instantly, no hidden charges, just real savings. ",
+        "Enjoy discounts at partner stations. Top up your wallet and generate fuel vouchers instantly, no hidden charges, just real savings.",
       position: "3",
       img: payless,
       tagline: "Fuel subsidy is back",
@@ -217,8 +217,8 @@ export default function Subsection() {
   return (
     <section className="wrapper py-8 subsection ">
       {/* 🚨 nav  */}
-      <nav className="sticky top-20 z-50">
-        <section className=" [ lg:w-1/2 w-[95%] ] second-nav mx-auto rounded-full flex justify-between  items-center bg-textColor-900 px-4 py-3">
+      <nav className="sticky  [ lg:top-18 top-15 ] z-50">
+        <section className=" [ lg:w-7/12 w-[95%] ] second-nav mx-auto rounded-full flex justify-between  items-center bg-textColor-900 px-4 py-3">
           <div className="flex gap-x-1 items-center">
             <img
               src={logo}
@@ -232,21 +232,30 @@ export default function Subsection() {
 
           <section>
             <div className=" gap-x-2 items-center [ lg:flex hidden ] ">
-              <button className="flex gap-x-1 w-fit px-3 py-2 items-center rounded-full bg-remis-50">
+              <a
+                href="https://play.google.com/store/apps/details?id=africa.remis.b2c"
+                className="flex gap-x-1 w-fit px-3 py-2 items-center rounded-full bg-remis-50"
+              >
                 <img src={location} alt="find station" />
                 <h1 className="text-remis-500 font-bold text-base">
-                  Find a station
+                  Download from Playstore
                 </h1>
-              </button>
+              </a>
 
-              <button className="flex gap-x-2 w-fit px-3 py-2 items-center rounded-full bg-sec">
+              <a
+                href="https://apps.apple.com/ng/app/fuelsubsidy/id6745834042"
+                className="flex gap-x-2 w-fit px-3 py-2 items-center rounded-full bg-sec"
+              >
                 <img src={scan} alt="download app" />
                 <h1 className="text-remis-500 font-bold text-base">
-                  Download app
+                  Download from Apple store
                 </h1>
-              </button>
+              </a>
             </div>
-            <div className="[ flex lg:hidden ] " onClick={() => setToggleNav(!toggleNav)}>
+            <div
+              className="[ flex lg:hidden ] "
+              onClick={() => setToggleNav(!toggleNav)}
+            >
               <img src={hamburger} alt="" />
             </div>
           </section>
@@ -275,7 +284,7 @@ export default function Subsection() {
 
       {/* 🚨excerpt  */}
       <h1 className="[ lg:text-heading-xxl text-base ] [ lg:my-20 my-10 ] text-textColor-400  about-app ">
-        Fuel Subsidy is a mobile app that helps everyday vehicle owners save on
+        FuelSubsidy is a mobile app that helps everyday vehicle owners save on
         fuel. Get discounts with digital vouchers, earn rewards for buying and
         referring, and monitor your fuel expenses, trips, and driving habits,
         all from one app.
@@ -304,10 +313,10 @@ export default function Subsection() {
       {/*  */}
 
       {/* 🚨 promo text  */}
-      <section className="my-10">
-        <h1 className="text-center [ lg:font-medium font-semibold ] text-remis-500 [ lg:text-display-lg text-display-md ] lg:leading-20">
-          Over ₦1,000,000 saved on <br />
-          subsidy
+      <section className="lg:my-10">
+        <h1 className="text-center [ lg:font-medium font-semibold ] text-remis-500 [ lg:text-[60px] text-[30px] ] lg:leading-18 [ lg:w-11/12 mx-auto ] ">
+          Over ₦1,000,000 saved on subsidy. Get more with every fill. Turn every
+          drop into value
         </h1>
       </section>
       {/*  */}

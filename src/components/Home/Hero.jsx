@@ -29,18 +29,16 @@ export default function Hero() {
 
             <section className="gap-x-4 pointer-events-auto  relative [ lg:flex hidden ]">
               <a
-                href="https://play.google.com/store/apps/details?id=africa.remis.b2c"
-                target="_blank"
-              >
-                
-                <img src={appStore} alt="" className="w-full h-[40px]" />
-              </a>
-              <a
-              className=""
                 href="https://apps.apple.com/ng/app/fuelsubsidy/id6745834042"
                 target="_blank"
               >
-                
+                <img src={appStore} alt="" className="w-full h-[40px]" />
+              </a>
+              <a
+                className=""
+                href="https://play.google.com/store/apps/details?id=africa.remis.b2c"
+                target="_blank"
+              >
                 <img src={googlePlay} alt="" className="w-full h-[40px]" />
               </a>
             </section>

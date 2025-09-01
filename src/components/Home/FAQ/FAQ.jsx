@@ -13,7 +13,7 @@ export default function FAQ() {
       body: {
         media: vid,
         header: "What is Fuel Subsidy and who is it for?",
-        desc: "Fuel Subsidy is a mobile app built for drivers who want to save money, earn rewards, and keep better track of fuel and car expenses",
+        desc: "FuelSubsidy is a mobile app built for drivers who want to save money, earn rewards, and keep better track of fuel and car expenses",
       },
     },
 
