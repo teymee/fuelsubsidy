@@ -3,6 +3,7 @@ import Masterlayout from "./components/Masterlayout";
 import Home from "./components/Home";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
+import CardAnimation from "./components/Home/CardAnimation";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -11,6 +12,7 @@ function App() {
     <>
       <Masterlayout>
         <Home />
+        {/* <CardAnimation/> */}
       </Masterlayout>
     </>
   );

@@ -1,4 +1,4 @@
-import React, { useRef} from "react";
+import React, { useRef } from "react";
 
 // 🚨 assets
 import logo from "@/assets/svg/logo.svg";
@@ -9,13 +9,14 @@ import { ScrollTrigger } from "gsap/all";
 import appStore from "@/assets/svg/appStore.svg";
 import googlePlay from "@/assets/svg/googlePlay.svg";
 import apple from "@/assets/svg/apple.svg";
-import playstore from "@/assets/svg/playstore.svg"; 
+import playstore from "@/assets/svg/playstore.svg";
 
 export default function Navbar() {
   const navRef = useRef();
 
   // const [toggleNav, setToggleNav] = useState(false);
   useGSAP(() => {
+    const mm = gsap.matchMedia();
     ScrollTrigger.killAll();
     gsap.from(".navbar", {
       backgroundColor: "transparent",
@@ -66,19 +67,19 @@ export default function Navbar() {
               ease: "power2.out",
             });
 
-            gsap.to(".second-nav", {
-              top: 100,
+            gsap.set(".second-nav", {
+              opacity: 0,
             });
           } else if (direction === 1) {
             gsap.to(".navbar", {
-              y: -100,
+              y: 0,
               opacity: 0,
               duration: 0.3,
               ease: "power2.out",
             });
 
-            gsap.to(".second-nav", {
-              top: 10,
+            gsap.set(".second-nav", {
+              opacity: 1,
             });
           }
         }
@@ -101,13 +102,16 @@ export default function Navbar() {
             </h1>
           </div>
 
-
-           <section className="bg-primary rounded-md  gap-x-4 flex">
+          <section className="bg-primary rounded-md  gap-x-4 flex">
             <a
               href="https://apps.apple.com/ng/app/fuelsubsidy/id6745834042"
               target="_blank"
             >
-              <img src={appStore} alt="" className="w-full h-[40px] hidden lg:block" />
+              <img
+                src={appStore}
+                alt=""
+                className="w-full h-[40px] hidden lg:block"
+              />
               <img src={apple} alt="" className="block lg:hidden" />
             </a>
 
@@ -116,8 +120,12 @@ export default function Navbar() {
                 href="https://play.google.com/store/apps/details?id=africa.remis.b2c"
                 target="_blank"
               >
-                <img src={googlePlay} alt="" className="w-full h-[40px]  hidden lg:block" />
-                 <img src={playstore} alt="" className="block lg:hidden" />
+                <img
+                  src={googlePlay}
+                  alt=""
+                  className="w-full h-[40px]  hidden lg:block"
+                />
+                <img src={playstore} alt="" className="block lg:hidden" />
               </a>
             </div>
           </section>
@@ -132,8 +140,6 @@ export default function Navbar() {
             </h1>
           </button> */}
         </section>
-
-     
       </section>
     </nav>
   );

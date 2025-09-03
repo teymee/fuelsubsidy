@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 // 🚨 assets
 import logo from "@/assets/svg/logo.svg";
-import scan from "@/assets/svg/scan.svg";
-import location from "@/assets/svg/location.svg";
+import appleStore from "@/assets/svg/green-apple.svg";
+import playstore from "@/assets/svg/green-playstore.svg";
 import hamburger from "@/assets/svg/hamburger.svg";
 import drive from "@/assets/svg/drive-earn.svg";
 import smartDrive from "@/assets/svg/smart-drive.svg";
@@ -47,120 +47,6 @@ export default function Subsection() {
     },
   ];
 
-  //   useGSAP(() => {
-  //   const text = SplitText.create(".about-app", { type: "words" });
-  //   let isAnimatingText = false;
-  //   let currentWordIndex = 0;
-  //   let accumulatedDelta = 0;
-  //   const scrollThreshold = 50;
-
-  //   gsap.set(text.words, {
-  //     color: "#999",
-  //     fontWeight: 400
-  //   });
-
-  //   const animateWord = (index) => {
-  //     if (index < text.words.length) {
-  //       gsap.to(text.words[index], {
-  //         color: "black",
-  //         fontWeight: 500,
-  //         duration: 0.3,
-  //         ease: 'power2.out'
-  //       });
-  //     }
-  //   };
-
-  //   const resetWord = (index) => {
-  //     if (index >= 0 && index < text.words.length) {
-  //       gsap.to(text.words[index], {
-  //         color: "#999",
-  //         fontWeight: 400,
-  //         duration: 0.3,
-  //         ease: 'power2.out'
-  //       });
-  //     }
-  //   };
-
-  //   // Custom scroll handler
-  //   const handleScroll = (e) => {
-  //     if (!isAnimatingText) return;
-
-  //     e.preventDefault();
-  //     e.stopPropagation();
-
-  //     const delta = e.deltaY;
-  //     accumulatedDelta += delta;
-
-  //     // Scrolling down - advance words
-  //     if (accumulatedDelta >= scrollThreshold && currentWordIndex < text.words.length) {
-  //       animateWord(currentWordIndex);
-  //       currentWordIndex++;
-  //       accumulatedDelta = 0;
-
-  //       if (currentWordIndex >= text.words.length) {
-  //         isAnimatingText = false;
-  //         setTimeout(() => {
-  //           window.scrollBy(0, 100);
-  //         }, 300);
-  //       }
-  //     }
-  //     // Scrolling up - reverse words
-  //     else if (accumulatedDelta <= -scrollThreshold && currentWordIndex > 0) {
-  //       currentWordIndex--;
-  //       resetWord(currentWordIndex);
-  //       accumulatedDelta = 0;
-
-  //       // If we've gone back to the beginning, exit animation mode
-  //       if (currentWordIndex <= 0) {
-  //         isAnimatingText = false;
-  //       }
-  //     }
-  //   };
-
-  //   // ScrollTrigger to detect when to start hijacking scroll
-  //   ScrollTrigger.create({
-  //     trigger: ".subsection",
-  //     start: "top 10%",
-  //     end: "bottom 20%",
-  //     onEnter: () => {
-  //       if (!isAnimatingText && currentWordIndex === 0) {
-  //         isAnimatingText = true;
-  //         window.addEventListener('wheel', handleScroll, { passive: false, capture: true });
-  //       }
-  //     },
-  //     onLeave: () => {
-  //       // Clean up if user scrolls past without completing animation
-  //       if (isAnimatingText) {
-  //         window.removeEventListener('wheel', handleScroll, { capture: true });
-  //         isAnimatingText = false;
-  //       }
-  //     },
-  //     onEnterBack: () => {
-  //       if (!isAnimatingText && currentWordIndex > 0) {
-  //         isAnimatingText = true;
-  //         window.addEventListener('wheel', handleScroll, { passive: false, capture: true });
-  //       }
-  //     },
-  //     onLeaveBack: () => {
-  //       // Reset all words when leaving back
-  //       if (isAnimatingText) {
-  //         window.removeEventListener('wheel', handleScroll, { capture: true });
-  //         isAnimatingText = false;
-  //         currentWordIndex = 0;
-  //         gsap.set(text.words, {
-  //           color: "#999",
-  //           fontWeight: 400
-  //         });
-  //       }
-  //     }
-  //   });
-
-  //   // Cleanup function
-  //   return () => {
-  //     window.removeEventListener('wheel', handleScroll, { capture: true });
-  //   };
-  // }, []);
-
   const cardContainer = useRef();
   const cardsRef = useRef([]);
   useGSAP(() => {
@@ -180,45 +66,34 @@ export default function Subsection() {
       },
     });
 
-    const container = cardContainer.current;
-    console.log("Cards ready for animation:", cardsRef.current.length, "cards");
-    ScrollTrigger.create({
-      trigger: container,
-      start: "center center",
-      end: "+=2000",
-      // pin: true,
-      // markers: true,
+    const cards = cardsRef.current;
+    console.log(cards);
+
+    cards.forEach((card, index) => {
+      gsap.to(card, {
+        scale: 0.8 + 0.2 * (index / cards?.length - 1),
+
+        scrollTrigger: {
+          trigger: card,
+          scrub: true,
+          start: `top ${15 + 35 * index}`,
+          end: "bottom bottom",
+          endTrigger: ".card-container",
+          pin: card,
+          pinSpacing: false,
+          // markers: true,
+          
+          invalidateOnRefresh: true,
+        },
+      });
     });
-
-    // const cards = cardsRef.current;
-
-    // gsap.set(".card", {
-    //   y: 100,
-    //   opacity: 0,
-    // });
-
-    // cards.forEach((card, index) => {
-    //   gsap.to(card, {
-    //     y: index * 90,
-    //     scale: index / 10 + 0.8,
-
-    //     opacity: 1,
-    //     stagger: 0.3,
-    //     scrollTrigger: {
-    //       trigger: card,
-    //       scrub: true,
-    //       start: "center center",
-    //       end: "bottom bottom",
-    //     },
-    //   });
-    // });
   }, []);
 
   return (
     <section className="wrapper py-8 subsection ">
       {/* 🚨 nav  */}
-      <nav className="sticky  [ lg:top-18 top-15 ] z-50">
-        <section className=" [ lg:w-7/12 w-[95%] ] second-nav mx-auto rounded-full flex justify-between  items-center bg-textColor-900 px-4 py-3">
+      <nav className="sticky second-nav  [ lg:top-8 top-4   ] z-50">
+        <section className=" [ lg:w-7/12 w-[95%] ]  mx-auto rounded-full flex justify-between  items-center bg-textColor-900 px-4 py-3">
           <div className="flex gap-x-1 items-center">
             <img
               src={logo}
@@ -236,7 +111,7 @@ export default function Subsection() {
                 href="https://play.google.com/store/apps/details?id=africa.remis.b2c"
                 className="flex gap-x-1 w-fit px-3 py-2 items-center rounded-full bg-remis-50"
               >
-                <img src={location} alt="find station" />
+                <img src={playstore} alt="find station" />
                 <h1 className="text-remis-500 font-bold text-base">
                   Download from Playstore
                 </h1>
@@ -246,7 +121,7 @@ export default function Subsection() {
                 href="https://apps.apple.com/ng/app/fuelsubsidy/id6745834042"
                 className="flex gap-x-2 w-fit px-3 py-2 items-center rounded-full bg-sec"
               >
-                <img src={scan} alt="download app" />
+                <img src={appleStore} alt="download app" />
                 <h1 className="text-remis-500 font-bold text-base">
                   Download from Apple store
                 </h1>
@@ -256,7 +131,7 @@ export default function Subsection() {
               className="[ flex lg:hidden ] "
               onClick={() => setToggleNav(!toggleNav)}
             >
-              <img src={hamburger} alt="" />
+              <img src={hamburger} alt="" className=" w-8" />
             </div>
           </section>
         </section>
@@ -292,23 +167,18 @@ export default function Subsection() {
       {/*  */}
 
       {/* 🚨 cards  */}
-      <section
-        ref={cardContainer}
-        className="relative [ lg:mt-60 mt-80 ] h-[43.75rem]"
-      >
-        <div className="w-full">
-          {cards.map((details, index) => {
-            return (
-              <div
-                ref={(el) => (cardsRef.current[index] = el)}
-                style={{ bottom: index * 90, scale: index / 10 + 0.8 }}
-                className={` card absolute `}
-              >
-                <Card details={details} />
-              </div>
-            );
-          })}
-        </div>
+      <section ref={cardContainer} className="[ lg:mt-60 mt-80 mb-50 ]  card-container">
+        {cards.map((details, index) => {
+          return (
+            <div
+              ref={(el) => (cardsRef.current[index] = el)}
+              // style={{ bottom: index * 90, scale: index / 10 + 0.8 }}
+              className={` card mb-[10vh]`}
+            >
+              <Card details={details} />
+            </div>
+          );
+        })}
       </section>
       {/*  */}
 
