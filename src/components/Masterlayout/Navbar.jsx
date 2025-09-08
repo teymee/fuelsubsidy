@@ -16,7 +16,7 @@ export default function Navbar() {
 
   // const [toggleNav, setToggleNav] = useState(false);
   useGSAP(() => {
-    const mm = gsap.matchMedia();
+    // const mm = gsap.matchMedia();
     ScrollTrigger.killAll();
     gsap.from(".navbar", {
       backgroundColor: "transparent",
@@ -89,7 +89,7 @@ export default function Navbar() {
   }, []);
   return (
     <nav ref={navRef}>
-      <section className="fixed z-50 top-4 w-full navbar ">
+      <section className="fixed z-50 top-0 w-full navbar ">
         <section className=" wrapper py-4 flex justify-between items-center">
           <div className="flex gap-x-1 items-center">
             <img
@@ -98,7 +98,7 @@ export default function Navbar() {
               className=" [ lg:w-full w-[28px] ]"
             />
             <h1 className="text-remis-50 [ lg:text-[22.04px] text-base ]">
-              FuelSubsidy
+              FuelSubsidy 
             </h1>
           </div>
 

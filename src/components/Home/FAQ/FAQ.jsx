@@ -74,9 +74,9 @@ export default function FAQ() {
 
         <section className="bg-remis-900 lg:rounded-2xl pt-4  [ lg:px-14 px-4 ] ">
           <section className=" py-14">
-            {faq.map((item) => {
+            {faq.map((item, index) => {
               return (
-                <section className="border-t-neutral-300 border-t-[1px] py-4">
+                <section key={index} className="border-t-neutral-300 border-t-[1px] py-4">
                   <FaqItem {...item} />
                 </section>
               );

@@ -67,7 +67,6 @@ export default function Subsection() {
     });
 
     const cards = cardsRef.current;
-    console.log(cards);
 
     cards.forEach((card, index) => {
       gsap.to(card, {
@@ -82,7 +81,7 @@ export default function Subsection() {
           pin: card,
           pinSpacing: false,
           // markers: true,
-          
+
           invalidateOnRefresh: true,
         },
       });
@@ -167,10 +166,14 @@ export default function Subsection() {
       {/*  */}
 
       {/* 🚨 cards  */}
-      <section ref={cardContainer} className="[ lg:mt-60 mt-80 mb-50 ]  card-container">
+      <section
+        ref={cardContainer}
+        className="[ lg:mt-60 mt-80 mb-50 ]  card-container"
+      >
         {cards.map((details, index) => {
           return (
             <div
+              key={index}
               ref={(el) => (cardsRef.current[index] = el)}
               // style={{ bottom: index * 90, scale: index / 10 + 0.8 }}
               className={` card mb-[10vh]`}
