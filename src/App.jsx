@@ -20,7 +20,7 @@ function App() {
 
   {
     path: "/download",
-    element: <Homepage />,
+    // element: <Homepage />,
     loader: async () => {
       const userOS = getUserOS();
       
@@ -30,11 +30,11 @@ function App() {
           window.location.href = "https://play.google.com/store/apps/details?id=africa.remis.b2c";
           return null;
         }
-        //  else if (userOS === "ios") {
-        //   // Try to open App Store
-        //   window.location.href = "https://apps.apple.com/ng/app/fuelsubsidy/id6745834042";
-        //   return null;
-        // }
+         else if (userOS === "ios") {
+          // Try to open App Store
+          window.location.href = "https://apps.apple.com/ng/app/fuelsubsidy/id6745834042";
+          return null;
+        }
         
         else {
           // Redirect to homepage for desktop/other devices
