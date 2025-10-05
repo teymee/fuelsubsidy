@@ -13,9 +13,9 @@ export default function Footer() {
             Get in touch
           </h1>
 
-          <p className="underline font-semibold text-white">
+          <a href="mailto:hello@fuelsubsidy.com" className="underline font-semibold text-white">
             hello@fuelsubsidy.com
-          </p>
+          </a>
         </section>
 
         <section className="flex gap-x-4 items-center justify-center flex-responsiveness">

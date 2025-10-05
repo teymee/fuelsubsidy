@@ -7,6 +7,8 @@ import bc from "@/assets/svg/big-circle.svg";
 import smart from "@/assets/svg/smart.svg";
 import appStore from "@/assets/svg/appStore.svg";
 import googlePlay from "@/assets/svg/googlePlay.svg";
+import { appleStoreTracker, googlePlayTracker } from "@/utils";
+import TrackButton from "../UI/TrackButton";
 
 export default function Hero() {
   return (
@@ -28,19 +30,24 @@ export default function Hero() {
             </div>
 
             <section className="gap-x-4 pointer-events-auto  relative [ lg:flex hidden ]">
-              <a
-                href="https://apps.apple.com/ng/app/fuelsubsidy/id6745834042"
-                target="_blank"
-              >
-                <img src={appStore} alt="" className="w-full h-[40px]" />
-              </a>
-              <a
-                className=""
-                href="https://play.google.com/store/apps/details?id=africa.remis.b2c"
-                target="_blank"
-              >
-                <img src={googlePlay} alt="" className="w-full h-[40px]" />
-              </a>
+              <TrackButton eventParam={appleStoreTracker}>
+                <a
+                  href="https://apps.apple.com/ng/app/fuelsubsidy/id6745834042"
+                  target="_blank"
+                >
+                  <img src={appStore} alt="" className="w-full h-[40px]" />
+                </a>
+              </TrackButton>
+
+              <TrackButton eventParam={googlePlayTracker}>
+                <a
+                  className=""
+                  href="https://play.google.com/store/apps/details?id=africa.remis.b2c"
+                  target="_blank"
+                >
+                  <img src={googlePlay} alt="" className="w-full h-[40px]" />
+                </a>
+              </TrackButton>
             </section>
             {/* 🚨prev design  */}
             {/* <div className="bg-[#54868866] w-fit  gap-x-4 item-center pr-4 rounded-2xl [ lg:flex hidden ]">
@@ -89,12 +96,14 @@ export default function Hero() {
             </a>
 
             <div className="mt-4">
-              <a
-                href="https://play.google.com/store/apps/details?id=africa.remis.b2c"
-                target="_blank"
-              >
-                <img src={googlePlay} alt="" className="w-full h-[40px]" />
-              </a>
+              <TrackButton eventParam={googlePlayTracker}>
+                <a
+                  href="https://play.google.com/store/apps/details?id=africa.remis.b2c"
+                  target="_blank"
+                >
+                  <img src={googlePlay} alt="" className="w-full h-[40px]" />
+                </a>
+              </TrackButton>
             </div>
           </section>
         </section>

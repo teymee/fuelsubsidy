@@ -14,6 +14,8 @@ import gsap from "gsap";
 
 import appStore from "@/assets/svg/appStore.svg";
 import googlePlay from "@/assets/svg/googlePlay.svg";
+import { appleStoreTracker, googlePlayTracker } from "@/utils";
+import TrackButton from "../UI/TrackButton";
 
 export default function Subsection() {
   const [toggleNav, setToggleNav] = useState(false);
@@ -106,25 +108,29 @@ export default function Subsection() {
 
           <section>
             <div className=" gap-x-2 items-center [ lg:flex hidden ] ">
-              <a
-                href="https://play.google.com/store/apps/details?id=africa.remis.b2c"
-                className="flex gap-x-1 w-fit px-3 py-2 items-center rounded-full bg-remis-50"
-              >
-                <img src={playstore} alt="find station" />
-                <h1 className="text-remis-500 font-bold text-base">
-                  Download from Playstore
-                </h1>
-              </a>
+              <TrackButton eventParam={appleStoreTracker}>
+                <a
+                  href="https://apps.apple.com/ng/app/fuelsubsidy/id6745834042"
+                  className="flex gap-x-2 w-fit px-3 py-2 items-center rounded-full bg-sec"
+                >
+                  <img src={appleStore} alt="download app" />
+                  <h1 className="text-remis-500 font-bold text-base">
+                    Download from Apple store
+                  </h1>
+                </a>
+              </TrackButton>
 
-              <a
-                href="https://apps.apple.com/ng/app/fuelsubsidy/id6745834042"
-                className="flex gap-x-2 w-fit px-3 py-2 items-center rounded-full bg-sec"
-              >
-                <img src={appleStore} alt="download app" />
-                <h1 className="text-remis-500 font-bold text-base">
-                  Download from Apple store
-                </h1>
-              </a>
+              <TrackButton eventParam={googlePlayTracker}>
+                <a
+                  href="https://play.google.com/store/apps/details?id=africa.remis.b2c"
+                  className="flex gap-x-1 w-fit px-3 py-2 items-center rounded-full bg-remis-50"
+                >
+                  <img src={playstore} alt="find station" />
+                  <h1 className="text-remis-500 font-bold text-base">
+                    Download from Playstore
+                  </h1>
+                </a>
+              </TrackButton>
             </div>
             <div
               className="[ flex lg:hidden ] "

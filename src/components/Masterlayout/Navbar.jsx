@@ -10,6 +10,8 @@ import appStore from "@/assets/svg/appStore.svg";
 import googlePlay from "@/assets/svg/googlePlay.svg";
 import apple from "@/assets/svg/apple.svg";
 import playstore from "@/assets/svg/playstore.svg";
+import TrackButton from "../UI/TrackButton";
+import { appleStoreTracker, googlePlayTracker } from "@/utils";
 
 export default function Navbar() {
   const navRef = useRef();
@@ -87,6 +89,7 @@ export default function Navbar() {
     });
     ScrollTrigger.refresh();
   }, []);
+
   return (
     <nav ref={navRef}>
       <section className="fixed z-50 top-0 w-full navbar ">
@@ -98,24 +101,26 @@ export default function Navbar() {
               className=" [ lg:w-full w-[28px] ]"
             />
             <h1 className="text-remis-50 [ lg:text-[22.04px] text-base ]">
-              FuelSubsidy 
+              FuelSubsidy
             </h1>
           </div>
 
           <section className="bg-primary rounded-md  gap-x-4 flex">
-            <a
-              href="https://apps.apple.com/ng/app/fuelsubsidy/id6745834042"
-              target="_blank"
-            >
-              <img
-                src={appStore}
-                alt=""
-                className="w-full h-[40px] hidden lg:block"
-              />
-              <img src={apple} alt="" className="block lg:hidden" />
-            </a>
+            <TrackButton eventParam={appleStoreTracker}>
+              <a
+                href="https://apps.apple.com/ng/app/fuelsubsidy/id6745834042"
+                target="_blank"
+              >
+                <img
+                  src={appStore}
+                  alt=""
+                  className="w-full h-[40px] hidden lg:block"
+                />
+                <img src={apple} alt="" className="block lg:hidden" />
+              </a>
+            </TrackButton>
 
-            <div className="">
+            <TrackButton eventParam={googlePlayTracker}>
               <a
                 href="https://play.google.com/store/apps/details?id=africa.remis.b2c"
                 target="_blank"
@@ -127,7 +132,7 @@ export default function Navbar() {
                 />
                 <img src={playstore} alt="" className="block lg:hidden" />
               </a>
-            </div>
+            </TrackButton>
           </section>
 
           {/* <button
