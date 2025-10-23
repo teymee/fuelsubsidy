@@ -9,9 +9,25 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    <!-- Google tag (gtag.js) -->
 
+    <!-- Google tag (gtag.js) -->
     <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-SMLN1KLG5E"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-SMLN1KLG5E");
+    </script>
+
+    <!-- 🚨 old Google tag (gtag.js) -->
+
+    <!-- <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-CM1JXRQS5Z"
     ></script>
@@ -30,6 +46,6 @@
         "G-CM1JXRQS5Z"
         // "G-XQ7E4HDCZR"
       );
-    </script>
+    </script> -->
   </body>
 </html>
