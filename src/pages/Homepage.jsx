@@ -24,7 +24,7 @@ export default function Homepage() {
           url: "https://www.fuelsubsidy.com/",
           // logo: "https://yourdomain.com/logo.png",
           description:
-            "Your company descriptionWe build innovative, data-driven technology solutions that simplify operations, improve decision-making, and unlock new opportunities for growth. Trusted by over 200 companies across Africa, our tools are designed to help you work smarter, reduce losses, and scale confidently",
+            "We build innovative, data-driven technology solutions that simplify operations, improve decision-making, and unlock new opportunities for growth. Trusted by over 200 companies across Africa, our tools are designed to help you work smarter, reduce losses, and scale confidently",
           contactPoint: {
             "@type": "ContactPoint",
             telephone: "+234 913 104 8999",
