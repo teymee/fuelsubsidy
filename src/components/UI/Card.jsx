@@ -12,12 +12,12 @@ export default function Card({ classStyle, details }) {
       <section className="w-[95%] mx-auto h-full  flex justify-between">
         <section className="flex flex-col justify-between [ lg:w-[30%] w-[95%]  lg:m-0 mx-auto ] ">
           <div className="space-y-4 [ lg:mt-[20%] mt-4 ]">
-            <h1 className="font-bold text-remis-500 [ lg:text-display-sm text-heading-lg ]">
+            <h3 className="font-bold text-remis-500 [ lg:text-display-sm text-heading-lg ]">
               {header}
-            </h1>
+            </h3>
 
             <section className=" block lg:hidden">
-              <img src={img} alt="" className="w-[310px] h-[319px]" />
+              <img src={img} alt={tagline} className="w-[310px] h-[319px]" />
             </section>
 
             <p className="text-textColor-500 [ lg:text-lg text-base ] ">

@@ -101,9 +101,9 @@ export default function Subsection() {
               alt="fuelsubsidy logo"
               className="[ lg:w-[2rem] lg:h-[2rem] w-[28px] ]"
             />
-            <h1 className="text-remis-50 [ lg:text-[1.25rem] text-base ] font-medium">
+            <h3 className="text-remis-50 [ lg:text-[1.25rem] text-base ] font-medium">
               FuelSubsidy
-            </h1>
+            </h3>
           </div>
 
           <section>
@@ -113,10 +113,13 @@ export default function Subsection() {
                   href="https://apps.apple.com/ng/app/fuelsubsidy/id6745834042"
                   className="flex gap-x-2 w-fit px-3 py-2 items-center rounded-full bg-sec"
                 >
-                  <img src={appleStore} alt="download app" />
-                  <h1 className="text-remis-500 font-bold text-base">
+                  <img
+                    src={appleStore}
+                    alt="Download FuelSubsidy app on the Apple App Store"
+                  />
+                  <h3 className="text-remis-500 font-bold text-base">
                     Download from Apple store
-                  </h1>
+                  </h3>
                 </a>
               </TrackButton>
 
@@ -125,10 +128,13 @@ export default function Subsection() {
                   href="https://play.google.com/store/apps/details?id=africa.remis.b2c"
                   className="flex gap-x-1 w-fit px-3 py-2 items-center rounded-full bg-remis-50"
                 >
-                  <img src={playstore} alt="find station" />
-                  <h1 className="text-remis-500 font-bold text-base">
+                  <img
+                    src={playstore}
+                    alt="Download FuelSubsidy app on the Google play Store"
+                  />
+                  <h3 className="text-remis-500 font-bold text-base">
                     Download from Playstore
-                  </h1>
+                  </h3>
                 </a>
               </TrackButton>
             </div>
@@ -136,7 +142,11 @@ export default function Subsection() {
               className="[ flex lg:hidden ] "
               onClick={() => setToggleNav(!toggleNav)}
             >
-              <img src={hamburger} alt="" className=" w-8" />
+              <img
+                src={hamburger}
+                alt="Open navigation menu"
+                className=" w-8"
+              />
             </div>
           </section>
         </section>
@@ -147,7 +157,11 @@ export default function Subsection() {
               href="https://apps.apple.com/ng/app/fuelsubsidy/id6745834042"
               target="_blank"
             >
-              <img src={appStore} alt="" className="w-full h-[40px]" />
+              <img
+                src={appStore}
+                alt="Download FuelSubsidy app on the Apple App Store"
+                className="w-full h-[40px]"
+              />
             </a>
 
             <div className="mt-4">
@@ -155,7 +169,11 @@ export default function Subsection() {
                 href="https://play.google.com/store/apps/details?id=africa.remis.b2c"
                 target="_blank"
               >
-                <img src={googlePlay} alt="" className="w-full h-[40px]" />
+                <img
+                  src={googlePlay}
+                  alt="Get FuelSubsidy app on Google Play Store"
+                  className="w-full h-[40px]"
+                />
               </a>
             </div>
           </section>
@@ -163,12 +181,12 @@ export default function Subsection() {
       </nav>
 
       {/* 🚨excerpt  */}
-      <h1 className="[ lg:text-heading-xxl text-base ] [ lg:my-20 my-10 ] text-textColor-400  about-app ">
+      <h2 className="[ lg:text-heading-xxl text-base ] [ lg:my-20 my-10 ] text-textColor-400  about-app ">
         FuelSubsidy is a mobile app that helps everyday vehicle owners save on
         fuel. Get discounts with digital vouchers, earn rewards for buying and
         referring, and monitor your fuel expenses, trips, and driving habits,
         all from one app.
-      </h1>
+      </h2>
       {/*  */}
 
       {/* 🚨 cards  */}
@@ -193,10 +211,10 @@ export default function Subsection() {
 
       {/* 🚨 promo text  */}
       <section className="lg:my-10">
-        <h1 className="text-center [ lg:font-medium font-semibold ] text-remis-500 [ lg:text-[60px] text-[30px] ] lg:leading-18 [ lg:w-11/12 mx-auto ] ">
+        <h2 className="text-center [ lg:font-medium font-semibold ] text-remis-500 [ lg:text-[60px] text-[30px] ] lg:leading-18 [ lg:w-11/12 mx-auto ] ">
           Over ₦1,000,000 saved on subsidy. Get more with every fill. Turn every
           drop into value
-        </h1>
+        </h2>
       </section>
       {/*  */}
     </section>

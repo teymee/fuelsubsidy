@@ -22,18 +22,22 @@ export default function Fouth() {
     <section className="wrapper global-gap">
       <section className="flex gap-x-4 items-center [ lg:gap-y-0 gap-y-4 ] [ lg:flex-row flex-col-reverse ]">
         <div className="lg:w-1/2">
-          <img src={ad} alt="" className="w-full" />
+          <img
+            src={ad}
+            alt="Fuelsubsidy app showing a list of user's referrals and their voucher bonuses"
+            className="w-full"
+          />
         </div>
 
         <section className=" overflow-hidden lg:w-1/2 relative bg-remis-1000 rounded-2xl p-8 h-full space-y-4">
-          <h1 className="text-remis-500 font-semibold [ lg:text-display-xs text-heading-md ]">
-            Refer & Earn Up to ₦100,000 Weekly in  Fuel Subsidy
-          </h1>
+          <h5 className="text-remis-500 font-semibold [ lg:text-display-xs text-heading-md ]">
+            Refer & Earn Up to ₦100,000 Weekly in Fuel Subsidy
+          </h5>
 
           <section className=" [ lg:h-[430px] h-[250px] ] lg:mt-10 mt-20">
             {/* 🚨 Line  */}
             <div className="absolute [ lg:left-0 left-[-20px] ] [ top-[25%] ]">
-              <img src={line} alt="" className="" />
+              <img src={line} alt="line" className="" />
             </div>
 
             {/* 🚨 icons  */}
@@ -45,12 +49,12 @@ export default function Fouth() {
                 <div className="[ lg:w-auto w-[45px] ]">
                   <img
                     src={active === 0 ? activePeople : people}
-                    alt=""
+                    alt="Refer a friend feature icon"
                     className={`${active === 0 ? "w-[65px]" : "w-[60px]"} `}
                   />
                 </div>
 
-                <img src={activeLine} alt="" />
+                <img src={activeLine} alt="Connecting line" />
               </section>
 
               <section
@@ -60,12 +64,12 @@ export default function Fouth() {
                 <div className="[ lg:w-auto w-[45px] ]">
                   <img
                     src={active === 1 ? activeWallet : wallet}
-                    alt=""
+                    alt="Wallet system feature icon"
                     className={`${active === 1 ? "w-[65px]" : "w-[60px]"} `}
                   />
                 </div>
 
-                <img src={activeLine} alt="" />
+                <img src={activeLine} alt="Connecting line" />
               </section>
 
               <section
@@ -75,12 +79,12 @@ export default function Fouth() {
                 <div className="[ lg:w-auto w-[45px] ]">
                   <img
                     src={active === 2 ? activePump : pump}
-                    alt=""
+                    alt="Automated fuel dispensing and purchase feature icon"
                     className={`${active === 1 ? "w-[65px]" : "w-[60px]"} `}
                   />
                 </div>
 
-                <img src={activeLine} alt="" />
+                <img src={activeLine} alt="Connecting line" />
               </section>
 
               <section
@@ -90,18 +94,22 @@ export default function Fouth() {
                 <div className="[ lg:w-auto w-[45px] ]">
                   <img
                     src={active === 3 ? activeGift : gift}
-                    alt=""
+                    alt="Rewards and bonuses feature icon"
                     className={`${active === 1 ? "w-[65px]" : "w-[60px]"} `}
                   />
                 </div>
 
-                <img src={activeLine} alt="" />
+                <img src={activeLine} alt="Connecting line" />
               </section>
             </div>
 
             {/* 🚨image  */}
             <section className="absolute  [ lg:w-[320px] lg:h-[320px] w-[260px] h-[240px] ] [ lg:left-45 right-0 ] [ lg:top-[30%] top-[32%] ] ">
-              <img src={referFriend} alt="" className="h-full w-full [ lg:object-contain object-cover ] " />
+              <img
+                src={referFriend}
+                alt="Refer a friend feature illustration"
+                className="h-full w-full [ lg:object-contain object-cover ] "
+              />
             </section>
           </section>
         </section>

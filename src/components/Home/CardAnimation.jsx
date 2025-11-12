@@ -80,7 +80,6 @@ export default function CardAnimation() {
 
   return (
     <section>
-      <h1>Trial</h1>
       {/* 🚨 cards  */}
       <section
         ref={cardContainer}

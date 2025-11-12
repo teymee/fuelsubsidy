@@ -100,9 +100,9 @@ export default function Navbar() {
               alt="fuelsubsidy logo"
               className=" [ lg:w-full w-[28px] ]"
             />
-            <h1 className="text-remis-50 [ lg:text-[22.04px] text-base ]">
+            <h2 className="text-remis-50 [ lg:text-[22.04px] text-base ]">
               FuelSubsidy
-            </h1>
+            </h2>
           </div>
 
           <section className="bg-primary rounded-md  gap-x-4 flex">
@@ -113,7 +113,7 @@ export default function Navbar() {
               >
                 <img
                   src={appStore}
-                  alt=""
+                  alt="Download FuelSubsidy app on the Apple App Store"
                   className="w-full h-[40px] hidden lg:block"
                 />
                 <img src={apple} alt="" className="block lg:hidden" />
@@ -127,7 +127,7 @@ export default function Navbar() {
               >
                 <img
                   src={googlePlay}
-                  alt=""
+                  alt="Get FuelSubsidy app on Google Play Store"
                   className="w-full h-[40px]  hidden lg:block"
                 />
                 <img src={playstore} alt="" className="block lg:hidden" />

@@ -6,7 +6,6 @@ export default function Homepage() {
   return (
     <>
       {/* 🚨 SEO improvement  */}
-      <title>Fuelsubsidy | Smart fueling, easy savings</title>
       <meta
         name="description"
         content="Buy fuel at discounted rates, earn rewards"

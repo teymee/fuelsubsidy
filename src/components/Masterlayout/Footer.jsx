@@ -9,9 +9,9 @@ export default function Footer() {
       <section className="flex flex-col items-center gap-y-10">
 
          <section className="space-y-4">
-          <h1 className="text-remisLite-500 text-heading-lg font-semibold">
+          <h4 className="text-remisLite-500 text-heading-lg font-semibold">
             Get in touch
-          </h1>
+          </h4>
 
           <a href="mailto:hello@fuelsubsidy.com" className="underline font-semibold text-white">
             hello@fuelsubsidy.com
@@ -19,9 +19,9 @@ export default function Footer() {
         </section>
 
         <section className="flex gap-x-4 items-center justify-center flex-responsiveness">
-          <h1 className="text-remisLite-300 [ lg:text-[160px] text-[52px] ]">
+          <h2 className="text-remisLite-300 [ lg:text-[160px] text-[52px] ]">
             FuelSubsidy
-          </h1>
+          </h2>
           <img src={contact} alt="" className="h-[120px] w-[7.5rem]" />
         </section>
        

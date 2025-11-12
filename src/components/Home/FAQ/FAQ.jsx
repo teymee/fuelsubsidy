@@ -67,9 +67,9 @@ export default function FAQ() {
     <section className="bg-remis-800 ">
       <section className=" [ lg:w-[80%] ] mx-auto py-20 space-y-10">
         <div className="text-white text-center  font-semibold [ lg:text-display-md text-display-xs ] ">
-          <h1 className="[ lg:leading-19 ]">
+          <h2 className="[ lg:leading-19 ]">
             Frequently Asked <br /> Questions
-          </h1>
+          </h2>
         </div>
 
         <section className="bg-remis-900 lg:rounded-2xl pt-4  [ lg:px-14 px-4 ] ">

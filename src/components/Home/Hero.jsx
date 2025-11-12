@@ -20,7 +20,7 @@ export default function Hero() {
             <div className="w-fit relative">
               <img
                 src={smart}
-                alt=""
+                alt="Fuelsubsidy mobile app"
                 className="right-[-20%] top-[-20%] [ lg:absolute hidden ]"
               />
 
@@ -35,7 +35,11 @@ export default function Hero() {
                   href="https://apps.apple.com/ng/app/fuelsubsidy/id6745834042"
                   target="_blank"
                 >
-                  <img src={appStore} alt="" className="w-full h-[40px]" />
+                  <img
+                    src={appStore}
+                    alt="Download FuelSubsidy app on the Apple App Store"
+                    className="w-full h-[40px]"
+                  />
                 </a>
               </TrackButton>
 
@@ -45,7 +49,11 @@ export default function Hero() {
                   href="https://play.google.com/store/apps/details?id=africa.remis.b2c"
                   target="_blank"
                 >
-                  <img src={googlePlay} alt="" className="w-full h-[40px]" />
+                  <img
+                    src={googlePlay}
+                    alt="Get FuelSubsidy app on Google Play Store"
+                    className="w-full h-[40px]"
+                  />
                 </a>
               </TrackButton>
             </section>
@@ -92,7 +100,11 @@ export default function Hero() {
               href="https://apps.apple.com/ng/app/fuelsubsidy/id6745834042"
               target="_blank"
             >
-              <img src={appStore} alt="" className="w-full h-[40px]" />
+              <img
+                src={appStore}
+                alt="Download FuelSubsidy app on the Apple App Store"
+                className="w-full h-[40px]"
+              />
             </a>
 
             <div className="mt-4">
@@ -101,7 +113,11 @@ export default function Hero() {
                   href="https://play.google.com/store/apps/details?id=africa.remis.b2c"
                   target="_blank"
                 >
-                  <img src={googlePlay} alt="" className="w-full h-[40px]" />
+                  <img
+                    src={googlePlay}
+                    alt="Get FuelSubsidy app on Google Play Store"
+                    className="w-full h-[40px]"
+                  />
                 </a>
               </TrackButton>
             </div>
